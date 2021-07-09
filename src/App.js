@@ -11,10 +11,17 @@ const App = () => {
     currentState[key].isClicked = true
     setIsClicked(currentState)
   }
+  const clearClicks = () => {
+    const currentState = [...isClicked]
+    for (let i=0; i<currentState.length; i++) {
+      currentState[i].isClicked = false
+    }
+    setIsClicked(currentState)
+  }
   return (
     <div>
       <h1>Buttons buttons buttons</h1>
-      <ButtonList buttons={buttons} handleClick={handleClick}/>
+      <ButtonList buttons={buttons} handleClick={handleClick} clearClicks={clearClicks}/>
     </div>
   );
 };
