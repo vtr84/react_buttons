@@ -1,11 +1,14 @@
 import React from 'react';
-const Button = ({button, handleClick, index}) => {
+import Button from './styled/Button'
+
+
+const ButtonClick = ({button, handleClick, index}) => {
     return(
         <>
-            <button disabled={button.isClicked}  onClick={() =>{handleClick(index)}}>{button.name}</button>
+            <Button disabled={button.isClicked}  onClick={() =>{handleClick(index)}}index={index} >{button.name}</Button>
         </>
     );
 }
 
 
-export default Button;
+export default ButtonClick;

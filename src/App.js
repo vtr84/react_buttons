@@ -3,6 +3,18 @@ import "./App.css";
 import buttons from "./data";
 import ButtonList from "./components/ButtonList"
 import {useState} from "react"
+import styled, {createGlobalStyle} from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+body {
+  padding: 20px;
+  margin: 0px;
+  font-family: Open-Sans, Helvetica, Sans-Serif;
+}
+button {
+  padding: 20px;
+}
+`
 
 const App = () => {
   const [isClicked, setIsClicked] = useState(buttons)
@@ -20,6 +32,7 @@ const App = () => {
   }
   return (
     <div>
+    <GlobalStyle />
       <h1>Buttons buttons buttons</h1>
       <ButtonList buttons={buttons} handleClick={handleClick} clearClicks={clearClicks}/>
     </div>
@@ -27,3 +40,4 @@ const App = () => {
 };
 
 export default App;
+
